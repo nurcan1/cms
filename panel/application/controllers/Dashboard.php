@@ -1,9 +1,10 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Dasboard extends CI_Controller {
+class Dashboard extends CI_Controller
+{
 
-	public $viewFolder ="";
+	public $viewFolder = "";
 	public function __construct()
 	{
 		parent::__construct();
@@ -13,5 +14,9 @@ class Dasboard extends CI_Controller {
 	public function index()
 	{
 		$this->load->view("{$this->viewFolder}/index");
+	}
+	public function test()
+	{
+		echo ("test");
 	}
 }

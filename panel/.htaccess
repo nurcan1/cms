@@ -1,0 +1,6 @@
+RewriteEngine On
+#Gonderdigim dosya herheangi bir klasore denk gelmiyorsa veya dosya ya denk gelmiyorsa
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d
+#basinda ve sonunda ne olursa olsun o verileri index.php ye gonder
+RewriteRule ^(.*)$ index.php/$1 [L]
