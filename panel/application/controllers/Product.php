@@ -40,6 +40,54 @@ class Product extends CI_Controller
 
 		$this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index", $viewData);
 	}
-	public function save(){
+	public function save()
+	{
+
+		$this->load->library("form_validation");
+
+		//Kurallar yazılır..
+		$this->form_validation->set_rules("title", "Başlık", "required|trim");
+
+		$this->form_validation->set_message(
+			array(
+				"required" => "<b>{field}</b> alanı doldurulmalıdır."
+			)
+		);
+
+		//FormValidation Çalıştırılır
+		//TRUE - FALSE
+		$validate = $this->form_validation->run();
+
+		if ($validate) {
+			$insert =	$this->product_model->add(
+				array(
+					"title" 		=> $this->input->post("title"),
+					"description" 	=> $this->input->post("description"),
+					"url" 			=> "test..",
+					"rank" 			=>0,
+					"isActive" 		=> 1,
+					"createdAt" 	=> date("Y-m-s H:i:s")
+
+				)
+			);
+			if ($insert) {
+				echo "kayıt işlemi başarılıdır...";
+			} else {
+				echo "Kayıt işlemi başarısızdır..";
+			}
+		} else {
+			// View' gönderilecek değişkenlerin set edilmesi
+			$viewData = new stdClass();
+			$viewData->viewFolder = $this->viewFolder;
+			$viewData->subViewFolder = "add";
+			$viewData->form_error = true;
+
+			$this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index", $viewData);
+		}
+		//Başarılı ise
+
+		//Kayıt işlemi başlar 
+		//Başarısız ise
+		//Hata ekranda gösterilir
 	}
 }
