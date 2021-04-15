@@ -4,7 +4,7 @@
 <head>
     <?php $this->load->view("includes/head"); ?>
 </head>
-<!-- rererererer -->
+<!-- rereghfghfghfhgfghfrererer -->
 <body class="menubar-left menubar-unfold menubar-light theme-primary">
     <!--============= start main area -->
 
