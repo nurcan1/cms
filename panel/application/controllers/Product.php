@@ -72,9 +72,9 @@ class Product extends CI_Controller
 				)
 			);
 			if ($insert) {
-				echo "kayıt işlemi başarılıdır...";
+				redirect(base_url("product"));
 			} else {
-				echo "Kayıt işlemi başarısızdır..";
+				redirect(base_url("product"));
 			}
 		} else {
 			// View' gönderilecek değişkenlerin set edilmesi
