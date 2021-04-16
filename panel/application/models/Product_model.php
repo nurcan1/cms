@@ -9,7 +9,8 @@ class Product_model extends CI_Model
         parent::__construct();
     }
 
-    public function get($where = array()){
+    public function get($where = array())
+    {
 
         return $this->db->where($where)->get($this->tableName)->row();
     }
@@ -19,8 +20,14 @@ class Product_model extends CI_Model
 
         return $this->db->where($where)->get($this->tableName)->result();
     }
-    public function add($data = array()){
+    public function add($data = array())
+    {
 
-        return $this->db->insert($this->tableName,$data);
+        return $this->db->insert($this->tableName, $data);
+    }
+    public function update($where = array() , $data = array())
+    {   
+
+        return $this->db->where($where)->update($this->tableName, $data);
     }
 }
