@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $(".remove-btn").click(function(e) {
+    $(".remove-btn").click(function() {
 
         var $data_url = $(this).data("url");
 
@@ -23,4 +23,15 @@ $(document).ready(function() {
 
     })
 
+    $(".isActive").change(function() {
+
+        var $data = $(this).prop("checked");
+        var $data_url = $(this).data("url");
+
+        if (typeof $data !== "undefined" && typeof $data_url !== "undefined") {
+            $.post($data_url, { data: $data }, function(response) {
+
+            });
+        }
+    });
 })
