@@ -25,7 +25,7 @@
                     </thead>
                     <tbody class="sortable" data-url=" <?php echo base_url("product/rankSetter"); ?>">
                         <?php foreach ($items as $item) { ?>
-                            <tr id="ord-<?=  $item->id; ?>">
+                            <tr id="ord-<?= $item->id; ?>">
                                 <td><i class="fa fa-reorder"></i></td>
                                 <td># <?php echo $item->id; ?></td>
                                 <td><?php echo $item->title; ?></td>
@@ -35,10 +35,11 @@
                                     <input data-url="<?php echo base_url("product/isActiveSetter/$item->id"); ?>" class="isActive" type="checkbox" data-switchery data-color="#10c469" <?php echo ($item->isActive) ? "checked" :  " "; ?> />
                                 </td>
                                 <td>
-                                    <a data-url="<?php echo base_url("product/delete/$item->id") ?>" type="button" class="btn btn-sm btn-danger btn-outline remove-btn"><i class="fa fa-trash"></i> Sil</a>
-                                    
-                                    <button href="<?php echo base_url("product/update_form/$item->id") ?>" type="button" class="btn btn-sm btn-info btn-outline"><i class="fa fa-pencil-square-o"></i> Düzenle</button>
-                                    <a href="<?php echo base_url("product/image_form/$item->id") ?>" type="button" class="btn btn-sm btn-dark btn-outline"><i class="fa fa-image"></i> Resimler</a>
+                                    <button data-url="<?php echo base_url("product/delete/$item->id"); ?>" class="btn btn-sm btn-danger btn-outline remove-btn">
+                                        <i class="fa fa-trash"></i> Sil
+                                    </button>
+                                    <a href="<?php echo base_url("product/update_form/$item->id"); ?>" class="btn btn-sm btn-info btn-outline"><i class="fa fa-pencil-square-o"></i> Düzenle</a>
+                                    <a href="<?php echo base_url("product/image_form/$item->id"); ?>" class="btn btn-sm btn-dark btn-outline"><i class="fa fa-image"></i> Resimler</a>
                                 </td>
                             </tr>
                         <?php } ?>
