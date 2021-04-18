@@ -21,7 +21,8 @@ class Product extends CI_Controller
 		// Tablodan verilerin getirilmesi
 
 		$items = $this->product_model->get_all(
-			array(), "rank ASC"
+			array(),
+			"rank ASC"
 		);
 
 		// View' gönderilecek değişkenlerin set edilmesi
@@ -214,12 +215,23 @@ class Product extends CI_Controller
 			$this->product_model->update(
 				array(
 					"id" => $id,
-					"rank !=" =>$rank
+					"rank !=" => $rank
 				),
 				array(
 					"rank" => $rank
 				)
 			);
 		}
+	}
+	public function image_form($id)
+	{
+		// View' gönderilecek değişkenlerin set edilmesi
+		$viewData = new stdClass();
+		$viewData->viewFolder = $this->viewFolder;
+		$viewData->subViewFolder = "image";
+
+
+
+		$this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index", $viewData);
 	}
 }
