@@ -23,32 +23,41 @@
         <div class="widget">
 
             <div class="widget-body">
-                <table class="table table-bordered table-striped table-hover pictures_list">
-                    <thead>
-                        <th>#id</th>
-                        <th>Görsel</th>
-                        <th>Resim Adı</th>
-                        <th>Durumu</th>
-                        <th>İşlem</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="w100 text-center">#1</td>
-                            <td class="w100">
-                                <img class="img-responsive" width="50" src="https://i.pinimg.com/originals/83/1a/72/831a7203d26d1cd11604c2bcbbdaabea.png" alt="">
-                            </td>
-                            <td>deneme.jpg</td>
-                            <td class="w100 text-center">
-                                <input data-url="<?php echo base_url("product/isActiveSetter/"); ?>" class="isActive" type="checkbox" data-switchery data-color="#10c469" <?php echo (true) ? "checked" :  " "; ?> />
+                <?php if (empty($item_images)) { ?>
+                    <div class="alert alert-info text-center">
+                        <p>Burada herhangi bir resim bulunmamaktadır.</p>
+                    </div>
+                <?php } else { ?>
+                    <table class="table table-bordered table-striped table-hover pictures_list">
+                        <thead>
+                            <th>#id</th>
+                            <th>Görsel</th>
+                            <th>Resim Adı</th>
+                            <th>Durumu</th>
+                            <th>İşlem</th>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($item_images as $image) : ?>
+                                <tr>
+                                    <td class="w100 text-center"><?= $image->id ?></td>
+                                    <td class="w100">
+                                        <img class="img-responsive" width="50" src="<?= base_url("uploads/{$viewFolder}/$image->img_url"); ?>" alt="<?= $image->img_url ?>">
+                                    </td>
+                                    <td><?= $image->img_url ?></td>
+                                    <td class="w100 text-center">
+                                        <input data-url="<?php echo base_url("product/isActiveSetter/"); ?>" class="isActive" type="checkbox" data-switchery data-color="#10c469" <?php echo ($image->id) ? "checked" :  " "; ?> />
 
-                            </td>
-                            <td class="w100 text-center">
-                                <a data-url="<?php echo base_url("product/delete/") ?>" type="button" class="btn btn-sm btn-danger btn-outline btn-block remove-btn"><i class="fa fa-trash"></i> Sil</a>
+                                    </td>
+                                    <td class="w100 text-center">
+                                        <a data-url="<?php echo base_url("product/delete/") ?>" type="button" class="btn btn-sm btn-danger btn-outline btn-block remove-btn"><i class="fa fa-trash"></i> Sil</a>
 
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                <?php }; ?>
+
             </div><!-- .widget-body -->
         </div>
     </div><!-- END column -->
