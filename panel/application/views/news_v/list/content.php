@@ -34,7 +34,7 @@
                                 <td><?php echo $item->url; ?></td>
                                 <td><?php echo $item->description; ?></td>
                                 <td><?php echo $item->news_type; ?></td>
-                                <td>Görsel Gelecek></td>
+                                <td>Görsel Gelecek</td>
                                 <td>
                                     <input data-url="<?php echo base_url("news/isActiveSetter/$item->id"); ?>" class="isActive" type="checkbox" data-switchery data-color="#10c469" <?php echo ($item->isActive) ? "checked" :  " "; ?> />
                                 </td>
