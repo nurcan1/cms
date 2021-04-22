@@ -25,20 +25,20 @@
                     <div class="form-group">
                         <label for="control-demo-6">Single Select</label>
                         <div id="control-demo-6" style="width: 50%;">
-                            <select class="form-control" name="news_type">
-                                <option value="video">Video</option>
+                            <select class="form-control news_type_select" name="news_type">
                                 <option value="image">Resim</option>
+                                <option value="video">Video</option>
 
                             </select>
                         </div>
                     </div><!-- .form-group -->
 
-                    <div class="form-group">
+                    <div class="form-group image_upload_container">
                         <label>Görsel Seçiniz</label>
                         <input type="file" name="img_url" class="form-control" style="width: 50%;">
                     </div>  
 
-                    <div class="form-group">
+                    <div class="form-group video_url_container">
                         <label>Video URL</label>
                         <input class="form-control" placeholder="Video bağlantısını buraya yapıştırınız." name="video_url" style="width: 50%;">
                         <?php if (isset($form_error)) : ?>
