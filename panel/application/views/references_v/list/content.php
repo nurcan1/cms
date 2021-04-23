@@ -35,10 +35,10 @@
                                 <td class="text-center">
                                     <img width="80" class="img-rounded" src="<?php echo base_url("uploads/$viewFolder/$item->img_url") ?>" alt="">
                                 </td>
-                                <td>
+                                <td class="text-center">
                                     <input data-url="<?php echo base_url("references/isActiveSetter/$item->id"); ?>" class="isActive" type="checkbox" data-switchery data-color="#10c469" <?php echo ($item->isActive) ? "checked" :  " "; ?> />
                                 </td>
-                                <td>
+                                <td class="text-center">
                                     <button data-url="<?php echo base_url("references/delete/$item->id"); ?>" class="btn btn-sm btn-danger btn-outline remove-btn">
                                         <i class="fa fa-trash"></i> Sil
                                     </button>
