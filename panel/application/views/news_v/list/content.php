@@ -34,7 +34,19 @@
                                 <td><?php echo $item->url; ?></td>
                                 <td><?php echo $item->description; ?></td>
                                 <td><?php echo $item->news_type; ?></td>
-                                <td>Görsel Gelecek</td>
+                                <td>
+                                    <?php if ($item->news_type == "image") : ?>
+                                        <img width="80" class="img-rounded" src="<?php echo base_url("uploads/$viewFolder/$item->img_url") ?>" alt="">
+                                    <?php elseif ($item->news_type == "video") : ?>
+                                        <iframe width="100" 
+                                        height="80"
+                                        src="<?php echo $item->video_url; ?>" 
+                                        title="YouTube video player" frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
+                                    <?php endif ?>
+                                </td>
                                 <td>
                                     <input data-url="<?php echo base_url("news/isActiveSetter/$item->id"); ?>" class="isActive" type="checkbox" data-switchery data-color="#10c469" <?php echo ($item->isActive) ? "checked" :  " "; ?> />
                                 </td>
