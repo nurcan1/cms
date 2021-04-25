@@ -9,7 +9,7 @@
 
             <div class="widget-body">
 
-                <form action="<?php echo base_url("references/update/$item->id") ?>" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url("courses/update/$item->id") ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Başlık</label>
                         <input class="form-control" placeholder="Başlık" name="title" value="<?= $item->title; ?>">
@@ -36,8 +36,17 @@
                         </div>
                     </div>
 
+                    <div class="form-group ">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="datetimepicker1">Eğitim Tarihi</label>
+                                <input value="<?php echo $item->event_date ?>" type="hidden" name="event_date" id="datetimepicker1" data-plugin="datetimepicker" data-options="{ inline: true, viewMode: 'days',format: 'YYYY-MM-DD HH:mm:ss' }"></input>
+                            </div>
+                        </div>
+                    </div><!-- END column -->
+
                     <button type="submit" class="btn btn-primary btn-md btn-outline">Güncelle</button>
-                    <a href="<?php echo base_url("references/index"); ?>" class="btn btn-md btn-danger btn-outline">İptal</a>
+                    <a href="<?php echo base_url("courses/index"); ?>" class="btn btn-md btn-danger btn-outline">İptal</a>
                 </form>
             </div><!-- .widget-body -->
         </div>
