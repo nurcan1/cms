@@ -10,6 +10,11 @@ function convertToSEO($text){
 
 }
 
+ function get_readable_date($date)
+{
+    //Gelen tarihi günü rakam ay bilgisini metinsel olarak yılı rakamsal olarak verir.
+   return strftime("%e %B %Y" , strtotime($date));
+}
 
 // public function fileName()
 // {

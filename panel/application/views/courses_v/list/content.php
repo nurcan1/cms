@@ -18,7 +18,7 @@
                         <th class="order"><i class="fa fa-reorder"></i></th>
                         <th class="w50">#id</th>
                         <th>Başlık</th>
-                        <th>Url</th>
+                        <th>Tarih</th>
                         <th>Açıklama</th>
                         <th>Görsel</th>
                         <th>Durumu</th>
@@ -30,7 +30,7 @@
                                 <td class="order"><i class="fa fa-reorder"></i></td>
                                 <td clas="w50 text-center"># <?php echo $item->id; ?></td>
                                 <td><?php echo $item->title; ?></td>
-                                <td><?php echo $item->url; ?></td>
+                                <td class="text-center"><?php echo get_readable_date($item->event_date); ?></td>
                                 <td><?php echo $item->description; ?></td>
                                 <td class="text-center">
                                     <img width="80" class="img-rounded" src="<?php echo base_url("uploads/$viewFolder/$item->img_url") ?>" alt="">
