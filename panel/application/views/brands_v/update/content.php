@@ -9,7 +9,7 @@
 
             <div class="widget-body">
 
-                <form action="<?php echo base_url("references/update/$item->id") ?>" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url("brands/update/$item->id") ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Başlık</label>
                         <input class="form-control" placeholder="Başlık" name="title" value="<?= $item->title; ?>">
@@ -17,13 +17,6 @@
                             <small class="pull-right input-form-error "><?php echo form_error("title"); ?></small>
                         <?php endif; ?>
                     </div>
-                    <div class="form-group">
-                        <label>Açıklama</label>
-                        <textarea name="description" class="m-0" data-plugin="summernote" data-options="{height: 250}">
-                             <?= $item->description; ?>
-                        </textarea>
-                    </div>
-
                     <div class="form-group image_upload_container">
                         <div class="row">
                             <div class="col-md-2">
@@ -37,7 +30,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-md btn-outline">Güncelle</button>
-                    <a href="<?php echo base_url("references/index"); ?>" class="btn btn-md btn-danger btn-outline">İptal</a>
+                    <a href="<?php echo base_url("brands/index"); ?>" class="btn btn-md btn-danger btn-outline">İptal</a>
                 </form>
             </div><!-- .widget-body -->
         </div>

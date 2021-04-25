@@ -216,8 +216,6 @@ class Brands extends CI_Controller
 
                     $data = array(
                         "title" => $this->input->post("title"),
-                        "description" => $this->input->post("description"),
-                        "url" => convertToSEO($this->input->post("title")),
                         "img_url" => $uploaded_file,
                     );
                 } else {
@@ -230,7 +228,7 @@ class Brands extends CI_Controller
 
                     $this->session->set_flashdata("alert", $alert);
 
-                    redirect(base_url("references/update_form/$id"));
+                    redirect(base_url("brands/update_form/$id"));
 
                     die();
                 }
@@ -238,8 +236,6 @@ class Brands extends CI_Controller
 
                 $data = array(
                     "title" => $this->input->post("title"),
-                    "description" => $this->input->post("description"),
-                    "url" => convertToSEO($this->input->post("title")),
                 );
             }
 
@@ -265,7 +261,7 @@ class Brands extends CI_Controller
             // İşlemin Sonucunu Session'a yazma işlemi...
             $this->session->set_flashdata("alert", $alert);
 
-            redirect(base_url("references"));
+            redirect(base_url("brands"));
         } else {
 
             $viewData = new stdClass();
