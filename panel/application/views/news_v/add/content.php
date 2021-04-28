@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="control-demo-6">Single Select</label>
+                        <label for="control-demo-6">Haber Türü</label>
                         <div id="control-demo-6" style="width: 50%;">
                             <select class="form-control news_type_select" name="news_type">
                                 <option value="image" style="display: <?php echo (isset($news_type) && $news_type == "image") ? "selected" : ""; ?>">Resim</option>
