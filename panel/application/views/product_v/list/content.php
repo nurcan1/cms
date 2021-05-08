@@ -19,7 +19,7 @@
                         <th class="w50">#id</th>
                         <th>Başlık</th>
                         <th>Url</th>
-                        <!-- <th>Açıklama</th> -->
+                        <th>Açıklama</th>
                         <th>Durumu</th>
                         <th>İşlem</th>
                     </thead>
@@ -30,7 +30,7 @@
                                 <td clas="w50 text-center"># <?php echo $item->id; ?></td>
                                 <td><?php echo $item->title; ?></td>
                                 <td><?php echo $item->url; ?></td>
-                                <!-- <td><?php echo $item->description; ?></td> -->
+                                <td><?php echo $item->description; ?></td>
                                 <td>
                                     <input data-url="<?php echo base_url("product/isActiveSetter/$item->id"); ?>" class="isActive" type="checkbox" data-switchery data-color="#10c469" <?php echo ($item->isActive) ? "checked" :  " "; ?> />
                                 </td>
